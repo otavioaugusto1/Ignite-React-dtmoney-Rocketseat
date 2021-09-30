@@ -5,7 +5,7 @@ import closeImg from '../../assets/close.svg'
 import incomeIgm from '../../assets/income.svg'
 import outcomeIgm from '../../assets/outcome.svg'
 import { api } from '../../services/api'
-import { TransactionsContext } from '../../TransactionsContext'
+import { useTransactions } from '../../hooks/useTransactions'
 
 
 interface NewTransactionModalProps {
@@ -14,7 +14,7 @@ interface NewTransactionModalProps {
 }
 
 export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionModalProps) {
-    const {createTransaction} = useContext(TransactionsContext)
+    const {createTransaction} = useTransactions()
     
     const [type, setType] = useState("deposit")
     const [title, setTitle] = useState("")
@@ -30,7 +30,7 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
          category,
          type
      })   
-     
+
      setType('deposit');
      setTitle('');
      setAmount(0);
