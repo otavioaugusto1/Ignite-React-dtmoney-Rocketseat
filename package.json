@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "miragejs": "^0.1.42"
+    "miragejs": "^0.1.42",
+    "polished": "^4.1.3"
   }
 }
